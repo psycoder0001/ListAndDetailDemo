@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidACDemo</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="add">New Item</string>
+    <string name="loan_total_amount">Loan Amount</string>
+    <string name="loan_paid_amount">Paid Amount</string>
+    <string name="loan_view_counter">Viewed</string>
+    <string name="delete">Delete</string>
+    <string name="wipe">Wipe Data</string>
+    <string name="loan_view_counter_type">Counter Type</string>
+</resources>

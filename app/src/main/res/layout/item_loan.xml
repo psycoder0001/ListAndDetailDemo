@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_loan_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/item_loan_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Of The Person" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_loan_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_loan_paid"
+        tools:text="99.999 TL" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_loan_paid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/text"
+        android:textStyle="italic"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/item_loan_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="52.250 TL" />
+
+    <View
+        android:id="@+id/item_loan_separator"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle"
+        app:layout_constraintEnd_toStartOf="@id/item_loan_total" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_loan_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+        android:textColor="@color/gray_dark"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_loan_name"
+        tools:text="REMOTE_EVENT_LISTENER" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_loan_viewed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:gravity="center|end"
+        android:textColor="@color/gray_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_loan_separator"
+        app:layout_constraintStart_toEndOf="@id/item_loan_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

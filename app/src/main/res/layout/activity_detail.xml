@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Of The Person" />
+
+    <View
+        android:id="@+id/detail_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/circle"
+        app:layout_constraintTop_toBottomOf="@id/detail_name" />
+
+    <View
+        android:id="@+id/detail_separator_ver_0"
+        android:layout_width="1dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_separator" />
+
+    <View
+        android:id="@+id/detail_separator_ver_1"
+        android:layout_width="1dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_separator" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_total_lbl"
+        style="@style/style_detail_lbl"
+        android:text="@string/loan_total_amount"
+        app:layout_constraintBottom_toBottomOf="@id/detail_separator_ver_0"
+        app:layout_constraintEnd_toStartOf="@id/detail_separator_ver_0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_total"
+        style="@style/style_detail_val"
+        app:layout_constraintBottom_toTopOf="@id/detail_total_lbl"
+        app:layout_constraintEnd_toEndOf="@id/detail_total_lbl"
+        app:layout_constraintStart_toStartOf="@id/detail_total_lbl"
+        tools:text="99.999 TL" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_paid_lbl"
+        style="@style/style_detail_lbl"
+        android:text="@string/loan_paid_amount"
+        app:layout_constraintBottom_toBottomOf="@id/detail_separator_ver_1"
+        app:layout_constraintEnd_toStartOf="@id/detail_separator_ver_1"
+        app:layout_constraintStart_toEndOf="@id/detail_separator_ver_0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_paid"
+        style="@style/style_detail_val"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/detail_paid_lbl"
+        app:layout_constraintEnd_toEndOf="@id/detail_paid_lbl"
+        app:layout_constraintStart_toStartOf="@id/detail_paid_lbl"
+        tools:text="52.250 TL" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_viewed_lbl"
+        style="@style/style_detail_lbl"
+        android:text="@string/loan_view_counter"
+        app:layout_constraintBottom_toBottomOf="@id/detail_separator_ver_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detail_separator_ver_1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_viewed"
+        style="@style/style_detail_val"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/detail_viewed_lbl"
+        app:layout_constraintEnd_toEndOf="@id/detail_viewed_lbl"
+        app:layout_constraintStart_toStartOf="@id/detail_viewed_lbl"
+        tools:text="3945" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_counter_type_lbl"
+        style="@style/style_detail_lbl"
+        android:text="@string/loan_view_counter_type"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_counter_type"
+        style="@style/style_detail_val"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/detail_counter_type_lbl"
+        app:layout_constraintEnd_toEndOf="@id/detail_counter_type_lbl"
+        app:layout_constraintStart_toStartOf="@id/detail_counter_type_lbl"
+        tools:text="INSTANT" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/detail_counter_increase_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:src="@android:drawable/ic_menu_add"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_counter_type_lbl"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/detail_delete_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:src="@android:drawable/ic_menu_delete"
+        app:layout_constraintBottom_toBottomOf="@id/detail_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/detail_name" />
+</androidx.constraintlayout.widget.ConstraintLayout>
