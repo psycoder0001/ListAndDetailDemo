@@ -1,11 +1,15 @@
 <resources>
-    <string name="app_name">AndroidACDemo</string>
-    <string name="main_menu">Main Menu</string>
-    <string name="add">New Item</string>
-    <string name="loan_total_amount">Loan Amount</string>
-    <string name="loan_paid_amount">Paid Amount</string>
-    <string name="loan_view_counter">Viewed</string>
+    <string name="app_name">My Movies</string>
+    <string name="main_menu">My Movies</string>
+    <string name="add">Add Movie</string>
+    <string name="rating">Rating</string>
+    <string name="year">Year</string>
+    <string name="viewed">Viewed</string>
     <string name="delete">Delete</string>
     <string name="wipe">Wipe Data</string>
     <string name="loan_view_counter_type">Counter Type</string>
+    <string name="view">%1$s View</string>
+    <string name="name">Name</string>
+    <string name="production_year">Production Year</string>
+    <string name="photo_url">Photo Url</string>
 </resources>

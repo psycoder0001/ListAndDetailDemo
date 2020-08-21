@@ -2,7 +2,9 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="oval">
-            <solid android:color="@color/colorPrimaryDark" />
+            <gradient
+                android:endColor="@color/gradient_end_0"
+                android:startColor="@color/gradient_start_0" />
         </shape>
     </item>
 </layer-list>
