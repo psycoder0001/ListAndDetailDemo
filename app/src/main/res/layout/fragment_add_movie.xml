@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/new_movie_title"
+        android:id="@+id/add_movie_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -20,13 +20,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/new_movie_scroll"
+        android:id="@+id/add_movie_scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="12dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@id/new_movie_save"
-        app:layout_constraintTop_toBottomOf="@id/new_movie_title">
+        app:layout_constraintBottom_toTopOf="@id/add_movie_save"
+        app:layout_constraintTop_toBottomOf="@id/add_movie_title">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -38,7 +38,7 @@
 
             <!-- NAME -->
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/new_movie_name_et"
+                android:id="@+id/add_movie_name_et"
                 style="@style/style_editable"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,86 +46,86 @@
                 tools:text="Movie Name" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/new_movie_name_lbl"
-                style="@style/style_new_movie_lbl"
+                android:id="@+id/add_movie_name_lbl"
+                style="@style/style_add_movie_lbl"
                 android:text="@string/name"
-                app:layout_constraintEnd_toEndOf="@id/new_movie_name_et"
-                app:layout_constraintStart_toStartOf="@id/new_movie_name_et"
-                app:layout_constraintTop_toTopOf="@id/new_movie_name_et" />
+                app:layout_constraintEnd_toEndOf="@id/add_movie_name_et"
+                app:layout_constraintStart_toStartOf="@id/add_movie_name_et"
+                app:layout_constraintTop_toTopOf="@id/add_movie_name_et" />
             <!-- NAME -->
 
             <!-- RATING -->
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/new_movie_rating_et"
+                android:id="@+id/add_movie_rating_et"
                 style="@style/style_editable"
                 android:inputType="numberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/new_movie_name_et"
+                app:layout_constraintTop_toBottomOf="@id/add_movie_name_et"
                 tools:text="7.8" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/new_movie_rating_lbl"
-                style="@style/style_new_movie_lbl"
+                android:id="@+id/add_movie_rating_lbl"
+                style="@style/style_add_movie_lbl"
                 android:text="@string/rating"
-                app:layout_constraintEnd_toEndOf="@id/new_movie_rating_et"
-                app:layout_constraintStart_toStartOf="@id/new_movie_rating_et"
-                app:layout_constraintTop_toTopOf="@id/new_movie_rating_et" />
+                app:layout_constraintEnd_toEndOf="@id/add_movie_rating_et"
+                app:layout_constraintStart_toStartOf="@id/add_movie_rating_et"
+                app:layout_constraintTop_toTopOf="@id/add_movie_rating_et" />
             <!-- RATING -->
 
             <!-- YEAR -->
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/new_movie_year_et"
+                android:id="@+id/add_movie_year_et"
                 style="@style/style_editable"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/new_movie_rating_et"
+                app:layout_constraintTop_toBottomOf="@id/add_movie_rating_et"
                 tools:text="1998" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/new_movie_year_lbl"
-                style="@style/style_new_movie_lbl"
+                android:id="@+id/add_movie_year_lbl"
+                style="@style/style_add_movie_lbl"
                 android:text="@string/production_year"
-                app:layout_constraintEnd_toEndOf="@id/new_movie_year_et"
-                app:layout_constraintStart_toStartOf="@id/new_movie_year_et"
-                app:layout_constraintTop_toTopOf="@id/new_movie_year_et" />
+                app:layout_constraintEnd_toEndOf="@id/add_movie_year_et"
+                app:layout_constraintStart_toStartOf="@id/add_movie_year_et"
+                app:layout_constraintTop_toTopOf="@id/add_movie_year_et" />
             <!-- YEAR -->
 
             <!-- URL -->
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/new_movie_url_et"
+                android:id="@+id/add_movie_url_et"
                 style="@style/style_editable"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/new_movie_year_et"
+                app:layout_constraintTop_toBottomOf="@id/add_movie_year_et"
                 tools:text="www.google.com" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/new_movie_url_lbl"
-                style="@style/style_new_movie_lbl"
+                android:id="@+id/add_movie_url_lbl"
+                style="@style/style_add_movie_lbl"
                 android:text="@string/photo_url"
-                app:layout_constraintEnd_toEndOf="@id/new_movie_url_et"
-                app:layout_constraintStart_toStartOf="@id/new_movie_url_et"
-                app:layout_constraintTop_toTopOf="@id/new_movie_url_et" />
+                app:layout_constraintEnd_toEndOf="@id/add_movie_url_et"
+                app:layout_constraintStart_toStartOf="@id/add_movie_url_et"
+                app:layout_constraintTop_toTopOf="@id/add_movie_url_et" />
             <!-- URL -->
 
             <!-- COUNTER TYPE -->
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/new_movie_counter_type_val"
+                android:id="@+id/add_movie_counter_type_val"
                 style="@style/style_editable"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/new_movie_url_et"
+                app:layout_constraintTop_toBottomOf="@id/add_movie_url_et"
                 tools:text="Instant View Counter" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/new_movie_counter_type_lbl"
-                style="@style/style_new_movie_lbl"
-                android:text="@string/loan_view_counter_type"
-                app:layout_constraintEnd_toEndOf="@id/new_movie_counter_type_val"
-                app:layout_constraintStart_toStartOf="@id/new_movie_counter_type_val"
-                app:layout_constraintTop_toTopOf="@id/new_movie_counter_type_val" />
+                android:id="@+id/add_movie_counter_type_lbl"
+                style="@style/style_add_movie_lbl"
+                android:text="@string/counter_type"
+                app:layout_constraintEnd_toEndOf="@id/add_movie_counter_type_val"
+                app:layout_constraintStart_toStartOf="@id/add_movie_counter_type_val"
+                app:layout_constraintTop_toTopOf="@id/add_movie_counter_type_val" />
 
             <com.ewo.laddemo.ui.custom.CustomIv
                 android:layout_width="36dp"
@@ -133,16 +133,16 @@
                 android:layout_marginEnd="24dp"
                 android:src="@drawable/baseline_arrow_drop_down_white_36"
                 app:customColor="@color/text_item_val"
-                app:layout_constraintBottom_toBottomOf="@id/new_movie_counter_type_val"
-                app:layout_constraintEnd_toEndOf="@id/new_movie_counter_type_val"
-                app:layout_constraintTop_toTopOf="@id/new_movie_counter_type_val" />
+                app:layout_constraintBottom_toBottomOf="@id/add_movie_counter_type_val"
+                app:layout_constraintEnd_toEndOf="@id/add_movie_counter_type_val"
+                app:layout_constraintTop_toTopOf="@id/add_movie_counter_type_val" />
 
             <Spinner
-                android:id="@+id/new_movie_counter_type_spn"
+                android:id="@+id/add_movie_counter_type_spn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@id/new_movie_counter_type_val"
+                app:layout_constraintBottom_toBottomOf="@id/add_movie_counter_type_val"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:listitem="@layout/item_spinner" />
@@ -157,10 +157,10 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:background="@drawable/circle"
-        app:layout_constraintTop_toBottomOf="@id/new_movie_title" />
+        app:layout_constraintTop_toBottomOf="@id/add_movie_title" />
 
     <Button
-        android:id="@+id/new_movie_save"
+        android:id="@+id/add_movie_save"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginBottom="24dp"

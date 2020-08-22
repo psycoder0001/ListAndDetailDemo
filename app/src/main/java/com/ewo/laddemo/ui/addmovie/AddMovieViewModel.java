@@ -1,4 +1,4 @@
-package com.ewo.laddemo.ui.newmovie;
+package com.ewo.laddemo.ui.addmovie;
 
 import android.app.Application;
 
@@ -8,10 +8,10 @@ import com.ewo.laddemo.ui.base.BaseViewModel;
 
 import androidx.annotation.NonNull;
 
-public class NewMovieViewModel extends BaseViewModel {
+public class AddMovieViewModel extends BaseViewModel {
     public EnumViewCounterType selectedCounterType = EnumViewCounterType.INSTANT_COUNTER; // default value
 
-    public NewMovieViewModel(@NonNull Application application) {
+    public AddMovieViewModel(@NonNull Application application) {
         super(application);
     }
 

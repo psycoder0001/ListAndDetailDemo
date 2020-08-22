@@ -8,13 +8,13 @@ import androidx.room.RoomDatabase;
 
 /**
  * This is the local db(SQLite) instance management class.
- * Creating different db instances are too expensive & a performans killer.
+ * Creating different db instances are too expensive & a performance killer.
  * So we create an instance at first need & keep it here.
  * <p>
  * If the db instance is lost somehow due to lack of memory etc.
  * a fresh new instance will be created automatically & no crash will appear.
  * <p>
- * In this this case we have only one db & it uses a single table named PersonModel.
+ * In this this case we have only one db & it uses a single table named MovieModel.
  */
 @Database(entities = {MovieModel.class}, version = 1)
 public abstract class MovieDataBase extends RoomDatabase {
@@ -28,7 +28,7 @@ public abstract class MovieDataBase extends RoomDatabase {
             synchronized (MovieDataBase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room
-                            .databaseBuilder(context.getApplicationContext(), MovieDataBase.class, "LoanDB")
+                            .databaseBuilder(context.getApplicationContext(), MovieDataBase.class, "MovieDB")
                             .fallbackToDestructiveMigration()
                             .build();
                 }

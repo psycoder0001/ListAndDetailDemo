@@ -1,6 +1,5 @@
 package com.ewo.laddemo.ui.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,7 +11,6 @@ import com.ewo.laddemo.localdb.MovieModel;
 import com.ewo.laddemo.ui.base.BaseFragment;
 import com.ewo.laddemo.ui.base.BaseFragmentConfig;
 import com.ewo.laddemo.ui.detail.DetailFragmentDTO;
-import com.ewo.laddemo.ui.newmovie.NewMovieActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +24,7 @@ public class MainFragment extends BaseFragment {
     private RecyclerView recyclerView;
     private MainActivityAdapter listAdapter;
 
-    public static Fragment getInstance() {
+    public static Fragment instantiate() {
         return new MainFragment();
     }
 
@@ -47,19 +45,19 @@ public class MainFragment extends BaseFragment {
         view.findViewById(R.id.main_add_icon).setOnClickListener(OnClickListener);
         view.findViewById(R.id.main_wipe_data_icon).setOnClickListener(OnClickListener);
 
-        viewModel.getPersonList().observe(getViewLifecycleOwner(), personModels -> {
-            if (personModels == null || personModels.isEmpty()) {
+        viewModel.getMovieList().observe(getViewLifecycleOwner(), movieModels -> {
+            if (movieModels == null || movieModels.isEmpty()) {
                 viewModel.generateInitialData();
                 return;
             }
             if (listAdapter == null) {
-                listAdapter = new MainActivityAdapter(personModels, this::onItemClick);
+                listAdapter = new MainActivityAdapter(movieModels, this::onItemClick);
                 recyclerView.setAdapter(listAdapter);
             } else {
                 if (recyclerView.getAdapter() == null) {
                     recyclerView.setAdapter(listAdapter);
                 }
-                listAdapter.data = personModels;
+                listAdapter.data = movieModels;
                 listAdapter.notifyDataSetChanged();
             }
         });
@@ -71,7 +69,7 @@ public class MainFragment extends BaseFragment {
             switch (view.getId()) {
                 case R.id.main_add:
                 case R.id.main_add_icon:
-                    startActivity(new Intent(getActivity(), NewMovieActivity.class));
+                    openPage(EnumFragmentPage.ADD_ITEM, null);
                     break;
                 case R.id.main_wipe_data_icon:
                     viewModel.wipeData();
@@ -82,14 +80,14 @@ public class MainFragment extends BaseFragment {
 
     private final MainCounterIncreaseListener mainCounterIncreaseListener = new MainCounterIncreaseListener() {
         @Override
-        public void onIncreasePersonCounter(MovieModel personModel, EnumViewCounterType acceptableCounterType) {
-            viewModel.increaseViewCounterWithType(personModel, acceptableCounterType);
+        public void onIncreaseMovieCounter(MovieModel movieModel, EnumViewCounterType acceptableCounterType) {
+            viewModel.increaseViewCounterWithType(movieModel, acceptableCounterType);
         }
     };
 
-    public void onItemClick(MovieModel personModel) {
-        mainCounterIncreaseListener.onIncreasePersonCounter(personModel, EnumViewCounterType.INSTANT_COUNTER);
+    public void onItemClick(MovieModel movieModel) {
+        mainCounterIncreaseListener.onIncreaseMovieCounter(movieModel, EnumViewCounterType.INSTANT_COUNTER);
         getAppContext().mainCounterIncreaseListener = mainCounterIncreaseListener;
-        openPage(EnumFragmentPage.DETAIL, new DetailFragmentDTO(personModel.id));
+        openPage(EnumFragmentPage.DETAIL_KT, new DetailFragmentDTO(movieModel.id));
     }
 }

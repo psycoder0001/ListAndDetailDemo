@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.ewo.laddemo.EnumFragmentPage;
 import com.ewo.laddemo.R;
 import com.ewo.laddemo.XApp;
+import com.ewo.laddemo.ui.addmovie.AddMovieFragment;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setContentView(activityConfig.layoutId);
         super.onCreate(savedInstanceState);
-        overridePendingTransition(R.anim.anim_page_open_vertical_in, 0);
+        overridePendingTransition(activityConfig.useAnimation ? R.anim.anim_page_open_vertical_in : 0, 0);
     }
 
     private FragmentEventListener fragmentEventListener = new FragmentEventListener() {
@@ -45,8 +46,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         String tag = fragment.getClass().getName();
         if (addToBackStack) {
             fragmentTransaction.addToBackStack(tag);
-            fragmentTransaction.setCustomAnimations(R.anim.anim_page_open_horizontal_in, R.anim.anim_page_open_horizontal_out
-                    , R.anim.anim_page_close_horizontal_in, R.anim.anim_page_close_horizontal_out);
+            if (fragment instanceof AddMovieFragment) {
+                fragmentTransaction.setCustomAnimations(R.anim.anim_page_open_vertical_in, R.anim.anim_page_open_vertical_out
+                        , R.anim.anim_page_close_vertical_in, R.anim.anim_page_close_vertical_out);
+            } else {
+                fragmentTransaction.setCustomAnimations(R.anim.anim_page_open_horizontal_in, R.anim.anim_page_open_horizontal_out
+                        , R.anim.anim_page_close_horizontal_in, R.anim.anim_page_close_horizontal_out);
+            }
         }
         if (data != null) {
             Bundle dataBundle = new Bundle();
@@ -65,6 +71,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(0, R.anim.anim_page_close_vertical_out);
+        overridePendingTransition(0, activityConfig.useAnimation ? R.anim.anim_page_close_vertical_out : 0);
     }
 }

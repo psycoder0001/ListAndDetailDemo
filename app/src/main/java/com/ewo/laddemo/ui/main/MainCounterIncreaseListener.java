@@ -4,5 +4,5 @@ import com.ewo.laddemo.localdb.EnumViewCounterType;
 import com.ewo.laddemo.localdb.MovieModel;
 
 public interface MainCounterIncreaseListener {
-    void onIncreasePersonCounter(MovieModel personModel, EnumViewCounterType counterType);
+    void onIncreaseMovieCounter(MovieModel movieModel, EnumViewCounterType counterType);
 }

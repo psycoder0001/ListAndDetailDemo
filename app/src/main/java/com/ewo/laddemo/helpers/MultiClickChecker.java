@@ -4,7 +4,7 @@ import android.util.SparseLongArray;
 import android.view.View;
 
 public class MultiClickChecker {
-    private static final long MIN_CLICK_INTERVAL = 500;
+    private static final long MIN_CLICK_INTERVAL = 250;
     public static SparseLongArray clickMemory;
 
     public static boolean isMultiClick(View view) {

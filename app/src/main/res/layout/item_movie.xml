@@ -30,8 +30,9 @@
         android:id="@+id/item_movie_photo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintBottom_toTopOf="@id/item_movie_total"
+        app:layout_constraintBottom_toTopOf="@id/item_movie_viewed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/item_movie_name" />
@@ -42,30 +43,30 @@
         android:layout_height="0dp"
         android:src="@drawable/baseline_star_white_18"
         app:customColor="@color/gradient_end_1"
-        app:layout_constraintBottom_toBottomOf="@id/item_movie_viewed"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_movie_viewed"
         app:layout_constraintTop_toTopOf="@id/item_movie_viewed" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/item_movie_total"
+        android:id="@+id/item_movie_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/text_item_val"
-        app:layout_constraintBaseline_toBaselineOf="@id/item_movie_viewed"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_movie_star"
+        app:layout_constraintBottom_toBottomOf="@id/item_movie_viewed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_movie_viewed"
         tools:text="8.9" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/item_movie_paid"
+        android:id="@+id/item_movie_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/text_val"
         android:textStyle="italic"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/item_movie_total"
+        app:layout_constraintBottom_toTopOf="@id/item_movie_rating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="52.250 TL" />

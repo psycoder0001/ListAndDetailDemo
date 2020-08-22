@@ -7,7 +7,7 @@
     <string name="viewed">Viewed</string>
     <string name="delete">Delete</string>
     <string name="wipe">Wipe Data</string>
-    <string name="loan_view_counter_type">Counter Type</string>
+    <string name="counter_type">Counter Type</string>
     <string name="view">%1$s View</string>
     <string name="name">Name</string>
     <string name="production_year">Production Year</string>

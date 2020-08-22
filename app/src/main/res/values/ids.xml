@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- RESERVED IDS FOR DETAIL PAGE -->
+    <item name="detail_title_tv" type="id" />
+    <item name="detail_delete_btn" type="id" />
+    <item name="detail_photo_iv" type="id" />
+    <item name="detail_counter_increase_btn" type="id" />
+    <item name="detail_counter_type_lbl" type="id" />
+    <item name="detail_counter_type_val" type="id" />
+    <item name="detail_separator" type="id" />
+    <item name="detail_ver_separator_l" type="id" />
+    <item name="detail_ver_separator_r" type="id" />
+    <item name="detail_rating_lbl" type="id" />
+    <item name="detail_rating_val" type="id" />
+    <item name="detail_year_lbl" type="id" />
+    <item name="detail_year_val" type="id" />
+    <item name="detail_viewed_lbl" type="id" />
+    <item name="detail_viewed_val" type="id" />
+</resources>

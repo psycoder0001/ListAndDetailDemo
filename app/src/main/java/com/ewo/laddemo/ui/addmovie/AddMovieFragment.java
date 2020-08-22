@@ -1,4 +1,4 @@
-package com.ewo.laddemo.ui.newmovie;
+package com.ewo.laddemo.ui.addmovie;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,13 +12,14 @@ import com.ewo.laddemo.R;
 import com.ewo.laddemo.localdb.DummyItemGenerator;
 import com.ewo.laddemo.localdb.EnumViewCounterType;
 import com.ewo.laddemo.localdb.MovieModel;
-import com.ewo.laddemo.ui.base.BaseActivity;
-import com.ewo.laddemo.ui.base.BaseActivityConfig;
+import com.ewo.laddemo.ui.base.BaseFragment;
+import com.ewo.laddemo.ui.base.BaseFragmentConfig;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
-public class NewMovieActivity extends BaseActivity {
+public class AddMovieFragment extends BaseFragment {
 
     private EditText nameEt;
     private EditText ratingEt;
@@ -26,29 +27,33 @@ public class NewMovieActivity extends BaseActivity {
     private EditText imgUrlEt;
     private TextView counterTypeValTv;
     private Spinner counterTypeSpn;
-    private NewMovieViewModel viewModel;
+    private AddMovieViewModel viewModel;
 
-    @Override
-    public void getActivityConfig(BaseActivityConfig activityConfig) {
-        activityConfig.layoutId = R.layout.activity_new_movie;
+    public static AddMovieFragment instantiate() {
+        return new AddMovieFragment();
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void getFragmentConfig(BaseFragmentConfig fragmentConfig) {
+        fragmentConfig.layoutId = R.layout.fragment_add_movie;
+    }
 
-        nameEt = findViewById(R.id.new_movie_name_et);
-        ratingEt = findViewById(R.id.new_movie_rating_et);
-        yearEt = findViewById(R.id.new_movie_year_et);
-        imgUrlEt = findViewById(R.id.new_movie_url_et);
-        counterTypeValTv = findViewById(R.id.new_movie_counter_type_val);
-        counterTypeSpn = findViewById(R.id.new_movie_counter_type_spn);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(this).get(NewMovieViewModel.class);
+        nameEt = view.findViewById(R.id.add_movie_name_et);
+        ratingEt = view.findViewById(R.id.add_movie_rating_et);
+        yearEt = view.findViewById(R.id.add_movie_year_et);
+        imgUrlEt = view.findViewById(R.id.add_movie_url_et);
+        counterTypeValTv = view.findViewById(R.id.add_movie_counter_type_val);
+        counterTypeSpn = view.findViewById(R.id.add_movie_counter_type_spn);
+
+        viewModel = new ViewModelProvider(this).get(AddMovieViewModel.class);
         counterTypeSpn.setOnItemSelectedListener(onSpinnerItemSelected);
-        counterTypeSpn.setAdapter(new ArrayAdapter<>(getApplicationContext(), R.layout.item_spinner, EnumViewCounterType.getListOfItem()));
-        findViewById(R.id.new_movie_save).setOnClickListener((view) -> onSave());
-        findViewById(R.id.new_movie_counter_type_val).setOnClickListener((view) -> counterTypeSpn.performClick());
+        counterTypeSpn.setAdapter(new ArrayAdapter<>(getAppContext(), R.layout.item_spinner, EnumViewCounterType.getListOfItem()));
+        view.findViewById(R.id.add_movie_save).setOnClickListener((clickedView) -> onSave());
+        view.findViewById(R.id.add_movie_counter_type_val).setOnClickListener((clickedView) -> counterTypeSpn.performClick());
 
         initializeWithRandomValues();
     }
@@ -64,7 +69,7 @@ public class NewMovieActivity extends BaseActivity {
 
     private void onSave() {
         viewModel.save(nameEt.getText().toString(), ratingEt.getText().toString(), yearEt.getText().toString(), imgUrlEt.getText().toString());
-        finish();
+        closePage();
     }
 
     private AdapterView.OnItemSelectedListener onSpinnerItemSelected = new AdapterView.OnItemSelectedListener() {

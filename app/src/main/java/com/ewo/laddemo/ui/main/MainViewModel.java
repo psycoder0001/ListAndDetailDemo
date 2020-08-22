@@ -20,17 +20,17 @@ import androidx.lifecycle.LiveData;
  * & all the data operations must be written here.
  */
 public class MainViewModel extends BaseViewModel {
-    public LiveData<List<MovieModel>> personList;
+    public LiveData<List<MovieModel>> movieList;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<List<MovieModel>> getPersonList() {
-        if (personList == null) {
-            personList = repository.getMovieList();
+    public LiveData<List<MovieModel>> getMovieList() {
+        if (movieList == null) {
+            movieList = repository.getMovieList();
         }
-        return personList;
+        return movieList;
     }
 
     public void wipeData() {
@@ -38,9 +38,9 @@ public class MainViewModel extends BaseViewModel {
     }
 
     public void generateInitialData() {
-        MovieModel person0 = DummyItemGenerator.GenerateNewItem(0, EnumViewCounterType.INSTANT_COUNTER);
-        MovieModel person1 = DummyItemGenerator.GenerateNewItem(1, EnumViewCounterType.DESTROY_COUNTER);
-        MovieModel person2 = DummyItemGenerator.GenerateNewItem(2, EnumViewCounterType.REMOTE_EVENT_COUNTER);
-        repository.addMovies(Arrays.asList(person0, person1, person2));
+        MovieModel movie0 = DummyItemGenerator.GenerateNewItem(0, EnumViewCounterType.INSTANT_COUNTER);
+        MovieModel movie1 = DummyItemGenerator.GenerateNewItem(1, EnumViewCounterType.DESTROY_COUNTER);
+        MovieModel movie2 = DummyItemGenerator.GenerateNewItem(2, EnumViewCounterType.REMOTE_EVENT_COUNTER);
+        repository.addMovies(Arrays.asList(movie0, movie1, movie2));
     }
 }

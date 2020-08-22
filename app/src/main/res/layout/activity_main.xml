@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/main_white_curtain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.ewo.laddemo.ui.custom.CustomIv
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_launcher_foreground"
+            app:customColor="@color/gradient_end_1" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

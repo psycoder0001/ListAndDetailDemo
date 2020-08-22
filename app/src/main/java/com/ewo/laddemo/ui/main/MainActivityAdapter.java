@@ -14,23 +14,23 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.MainPersonViewHolder> {
+public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.MainMovieViewHolder> {
     private final ItemClickListener itemClickListener;
     public List<MovieModel> data;
 
-    public MainActivityAdapter(List<MovieModel> personModels, ItemClickListener itemClickListener) {
-        this.data = personModels;
+    public MainActivityAdapter(List<MovieModel> movieModels, ItemClickListener itemClickListener) {
+        this.data = movieModels;
         this.itemClickListener = itemClickListener;
     }
 
     @NonNull
     @Override
-    public MainPersonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MainPersonViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie, parent, false));
+    public MainMovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MainMovieViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainPersonViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MainMovieViewHolder holder, int position) {
         holder.setData(data.get(position));
     }
 
@@ -39,37 +39,37 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
         return data == null ? 0 : data.size();
     }
 
-    class MainPersonViewHolder extends RecyclerView.ViewHolder {
+    class MainMovieViewHolder extends RecyclerView.ViewHolder {
         private TextView nameTv;
         private CustomIv photoIv;
-        private TextView totalTv;
+        private TextView ratingTv;
         private TextView yearTv;
         private TextView counterTypeTv;
         private TextView viewTv;
 
-        MainPersonViewHolder(@NonNull View itemView) {
+        MainMovieViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTv = itemView.findViewById(R.id.item_movie_name);
             photoIv = itemView.findViewById(R.id.item_movie_photo);
-            totalTv = itemView.findViewById(R.id.item_movie_total);
-            yearTv = itemView.findViewById(R.id.item_movie_paid);
+            ratingTv = itemView.findViewById(R.id.item_movie_rating);
+            yearTv = itemView.findViewById(R.id.item_movie_year);
             viewTv = itemView.findViewById(R.id.item_movie_viewed);
             counterTypeTv = itemView.findViewById(R.id.item_movie_type);
         }
 
-        public void setData(MovieModel personModel) {
-            itemView.setOnClickListener(view -> itemClickListener.onItemClick(personModel));
+        public void setData(MovieModel movieModel) {
+            itemView.setOnClickListener(view -> itemClickListener.onItemClick(movieModel));
 
-            nameTv.setText(personModel.name);
-            totalTv.setText(String.valueOf(personModel.rating));
-            yearTv.setText(String.valueOf(personModel.year));
-            photoIv.loadImageUrl(personModel.imgUrl);
-            viewTv.setText(viewTv.getContext().getString(R.string.view, String.valueOf(personModel.viewCountValue)));
-            counterTypeTv.setText(personModel.getViewCounterType().getShortName());
+            nameTv.setText(movieModel.name);
+            ratingTv.setText(String.valueOf(movieModel.rating));
+            yearTv.setText(String.valueOf(movieModel.year));
+            photoIv.loadImageUrl(movieModel.imgUrl);
+            viewTv.setText(viewTv.getContext().getString(R.string.view, String.valueOf(movieModel.viewCountValue)));
+            counterTypeTv.setText(movieModel.getViewCounterType().getShortName());
         }
     }
 
     public interface ItemClickListener {
-        void onItemClick(MovieModel personModel);
+        void onItemClick(MovieModel movieModel);
     }
 }
